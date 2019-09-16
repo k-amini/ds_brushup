@@ -59,3 +59,12 @@ http://ec2-3-15-191-164.us-east-2.compute.amazonaws.com:80
 # Get the token using:
 docker logs notebook
 # Then upload the notebook using the web interface
+
+# To restart a stopped container, use 
+docker restart notebook # where notebook is the container name
+
+# To stop a running container, use
+docker stop notebook # where notebook is the container name
+
+# Docker add new notebook
+docker run -v $PWD:/home/jovyan/wor
