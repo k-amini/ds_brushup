@@ -67,4 +67,4 @@ docker restart notebook # where notebook is the container name
 docker stop notebook # where notebook is the container name
 
 # Docker add new notebook
-docker run -v $PWD:/home/jovyan/wor
+docker run -v $PWD:/home/jovyan/work -p 80:8888 --name notebook jupyter/scipy-notebook -d
