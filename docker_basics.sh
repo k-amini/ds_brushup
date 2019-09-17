@@ -63,6 +63,9 @@ docker logs notebook
 # To restart a stopped container, use 
 docker restart notebook # where notebook is the container name
 
+# To list stopped containers, use
+docker ps -a
+
 # To stop a running container, use
 docker stop notebook # where notebook is the container name
 
