@@ -1,5 +1,8 @@
 # This is a list of most of the navigation commands
-# we have seen so far
+# we have seen so far.
+
+# Note : I am using the standard abbreviation *nix
+# to refer to Mac OS X, Linux and Unix
 
 # pwd : Prints the Working Directory
 # Show where you are in the file tree
@@ -65,9 +68,43 @@ rmdir /path/to/empty/directory
 
 # chmod : Change mode
 chmod +x /path/to/file
-# Chmod changes the mode of a file. If you run an
-
+# Chmod changes the mode of a file. *nix has three
+# file modes; [r]ead, [w]rite and e[x]ecute.
+# Thus:
+#   +r makes a file readable
+#   +w makes a file writable
+#   +x makes a file executable
+#   -r makes a file unreadable
+#   -w makes a file read only
+#   -x makes a file not executable
+# The current parameters of a file can be seen using
+# ls -a
+chmod 755 /path/to/file
+# There is a more nuanced way to approach file permissions
+# also possible with chmod, called octal permissions
+#   read is 4
+#   write is 2
+#   execute is 1
+# Sum the permissions you want together for each of the three
+# level; owner, group and everyone.
+# e.g.:
+chmod 400 /path/to/file
+# Read only for owner, no-one else can do anything
+chmod 755 /path/to/file
+# Owner has read / write and execute, others can read and execute
+# This is common for directories as directories need execute
+# privilege to be opened
+chmod 644 /path/to/file
+# Owner can read / write and execute, others can read and execute
+# Good for general text files
+chmod 777 /path/to/file
+# Generally not a good idea, as it allows everyone to do everything
+# Often seen on files copied onto a *nix machine
 
 # chown : Change owner
+chown /path/to/file new_owner:new_group
+# This again can be run recursively using -r
 
 # chgrp : Change group
+chgrp /path/to/file new_group
+# This again can be run recursively using -r
